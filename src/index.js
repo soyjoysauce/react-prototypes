@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/app';
+import App from './functional_components/app';
 
 const userObj = {
     name: 'Soy',

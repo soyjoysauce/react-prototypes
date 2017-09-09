@@ -2,9 +2,10 @@
  * Created by soysauce on 9/6/17.
  */
 import React from 'react';
-
-
-export default () => {
+import App from './functional_components/app';
+export default (data) => {
+   <App/>
+    data = students
     return (
         <table className="table">
             <thead className="thead-inverse">
@@ -17,18 +18,18 @@ export default () => {
             <tbody>
                 <tr>
                     <td>Soy</td>
-                    <td>Cody</td>
-                    <td>Chris</td>
-                </tr>
-                <tr>
                     <td>Design</td>
-                    <td>Social Science</td>
-                    <td>Math</td>
+                    <td>95</td>
                 </tr>
                 <tr>
-                    <td>91</td>
-                    <td>78</td>
-                    <td>89</td>
+                    <td>Cody</td>
+                    <td>Social Science</td>
+                    <td>90</td>
+                </tr>
+                <tr>
+                    <td>Chris</td>
+                    <td>Math</td>
+                    <td>99</td>
                 </tr>
             </tbody>
         </table>
