@@ -15,8 +15,7 @@ ReactDOM.render(
 
 function luckyNumber () {
    return Math.floor(Math.random()*1000) +1;
-    console.log();
-};
+}
 
 
 function greeting(userObj){
