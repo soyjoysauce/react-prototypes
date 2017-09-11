@@ -2,10 +2,11 @@
  * Created by soysauce on 9/6/17.
  */
 import React from 'react';
-import App from './functional_components/app';
-export default (data) => {
-   <App/>
-    data = students
+import App from './app';
+
+export default (props) => {
+   <App/>;
+    const tableRows = props.data.map(function(item,[item]){return });
     return (
         <table className="table">
             <thead className="thead-inverse">
