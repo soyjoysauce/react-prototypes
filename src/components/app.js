@@ -22,8 +22,7 @@ export default() =>{
     return(
         <div className="container">
             <h1>Student Grade Table</h1>
-            <Table data={students}/>;
-            <Table/>
+            <Table data={students}/>
         </div>
     )
 }
