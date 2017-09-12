@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
+import Time from './format_time';
 
 class Stopwatch extends Component {
     constructor(props){
         super(props);
+
         this.state = {
             status:'stopped',
             start: null,
@@ -11,30 +13,24 @@ class Stopwatch extends Component {
         this.start = this.start.bind(this);
         this.stop = this.stop.bind(this);
         this.update = this.update.bind(this);
+        this.reset = this.reset.bind(this);
     }
     render(){
         console.log('re rendering');
-        const {elapsed, status} =this.state;
+        const {status,elapsed} =this.state;
         return (
-            <div>
-                <h1>{this.state.elapsed}</h1>
-                <p>{this.state.status}</p>
-                <button onClick = {this.start}>Start</button>
-                <button onClick = {this.stop}>Stop</button>
+            <div className = "jumbotron">
+                <h1 className="display-3"><Time elapsed={elapsed}/></h1>
+            <hr className="my-3"/>
+                <p className="lead text-center">{status}</p>
+                <p className="text-center">
+                    <button className = "btn btn-outline-success mx-3" onClick = {this.start} >Start</button>
+                    <button className = "btn btn-outline-warning mx-3" onClick = {this.stop}>Stop</button>
+                    <button className = "btn btn-outline-danger mx-3" onClick ={this.reset}>Reset</button>
+                </p>
             </div>
         );
     }
-    // start(){
-    //     console.log("this is : ",this);
-    //     let dateObject = new Date();
-    //     let startTime = dateObject.getTime();
-    //     const newState = {
-    //         status: 'running',
-    //         start: startTime
-    //     }
-    //     this.setState(newState);
-    // }
-
     start(){
         this.setState({
             status :'running',
@@ -57,6 +53,14 @@ class Stopwatch extends Component {
             setTimeout(this.update,10)
         }
     }
+    reset(){
+        this.setState({
+            status:'stopped',
+            start:null,
+            elapsed: 0
+        });
+    }
+
 }
 
 export default Stopwatch;
