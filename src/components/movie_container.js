@@ -24,7 +24,7 @@ class MovieContainer extends Component{
         console.log('The state is:',this.state);
         const movieList= (this.state.movies).map(function(movieInfo,index){return <Movie info={movieInfo} key={index}/>});
         return (
-            <div className="container">
+            <div>
                 {movieList}
             </div>
         );
