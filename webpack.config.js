@@ -4,7 +4,7 @@ const webpack = require('webpack');
 module.exports = {
     entry: [
         'webpack-dev-server/client?http://localhost:3000',
-        './index.js'
+        './index_old.js'
     ],
     output: {
         filename: 'bundle.js',
