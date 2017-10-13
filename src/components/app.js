@@ -1,48 +1,22 @@
 import React from 'react';
-import MovieContainer from './movie_container';
-import React,{Component} from 'react';
-import ContactList from './contact_list';
-import ContactForm from './contact_form';
-import contactData from '../data/contacts';
+import {Route} from 'react-router-dom';
+import Nav from './nav';
+import Welcome from './welcome';
+import OurMacarons from './our_macarons';
+import GiftsParties from './gifts_parties';
+import Contacts from './contact';
 
-export default (props) => (
-    <div className="container">
-        <h1 className="text-center">Axios Demo</h1>
-        <MovieContainer/>
-    </div>
-)
-
-class App extends Component {
-    constructor(props){
-        super(props);
-        this.state ={
-            contacts: contactData
-        }
-        this.addContact= this.addContact.bind(this);
-    }
-    addContact(contact){
-        console.log('App: addComponent:',contact);
-
-        const newContacts = this.state.contacts.slice();
-        newContacts.push(contact);
-        this.setState({
-        contacts: newContacts
-        })
-    }
-
-    render() {
-        return(
-        <div className = 'container'>
-            <h1 className = 'text-center my-3'>Address Book</h1>
-            <div className ='row'>
-                <div className = 'col-4'>
-                    <ContactForm add={this.addContact}/>
-                </div>
-                    <ContactList contacts ={this.state.contacts}/>
-            </div>
+function App(){
+    return(
+        <div className="container">
+            <Nav/>
+            <Route exact path="/" component = {Welcome}/>
+            <Route path="/our-macarons" component={OurMacarons}/>
+            <Route path="/gifts-parties" component={GiftsParties}/>
+            <Route path="/contacts" component={Contacts}/>
         </div>
-        )
-    }
+    );
 }
 
 export default App;
+
