@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/app';
-
 const userObj = {
     name: 'Soy',
     property: luckyNumber()
@@ -10,6 +9,7 @@ const userObj = {
 ReactDOM.render(
     <App/>,
     // greeting(userObj),
+
     document.getElementById('root')
 );
 
