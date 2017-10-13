@@ -1,8 +1,16 @@
+import React from 'react';
+import MovieContainer from './movie_container';
 import React,{Component} from 'react';
 import ContactList from './contact_list';
 import ContactForm from './contact_form';
 import contactData from '../data/contacts';
 
+export default (props) => (
+    <div className="container">
+        <h1 className="text-center">Axios Demo</h1>
+        <MovieContainer/>
+    </div>
+)
 
 class App extends Component {
     constructor(props){
